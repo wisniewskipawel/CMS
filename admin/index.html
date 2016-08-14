@@ -1,0 +1,170 @@
+        <html>
+    <head>
+        <title>{$title}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+       <script src="http//code.jquery.com/jquery-latest.js"></script>
+       <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+    </head>
+    <body>
+    <style type="text/css">
+      body {
+        padding-top: 70px;
+      }
+    </style>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Grupowanie "marki" i przycisku rozwijania mobilnego menu -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+            <span class="sr-only">Rozwiń nawigację</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">LOGO CMS</a>
+        </div>
+        <!-- Grupowanie elementów menu w celu lepszego wyświetlania na urządzeniach moblinych -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#"  data-toggle="tooltip" data-placement="left" title="Tu znajdziesz najnowsze komentarze">Aktualności</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle fa fa-pencil" aria-hidden="true" data-toggle="dropdown">Artykuły<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#lists.tpl">Lista artykułów</a></li>  
+                <li><a href="#addarticle.tpl">Dodaj artykuł</a></li>
+                <li><a href="#">Kategoria artykułu</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle fa fa-user" data-toggle="dropdown">Użytkownicy<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Dodaj użytkownika</a></li>
+                <li><a href="#">Edytuj uprawnienia</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle fa fa-cog" data-toggle="dropdown">Pakiety<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#lista.tpl">Lista pakietów</a></li>
+                <li><a href="#pakiet.tpl">Edytuj pakiet</a></li>
+                <li><a href="#">Dodaj umowę</a></li>
+                <li class="divider"></li>
+               <li><a href="#oplaty.tpl">Opłaty</a></li>
+                <li class="divider"></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Szukaj">
+            </div>
+            <button type="submit" class="btn btn-default">Wyślij</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Kontak z autorem</a></li>
+            <li class="dropdown">
+              <a href="#poczta.tpl" class="dropdown-toggle" data-toggle="dropdown">Wiadomości<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Skrzynka odbiorcza</a></li>
+                <li><a href="#">Skrzynka nadawcza</a></li>
+                <li><a href="#">Kosz</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+        <div class="container">
+            <table class="table table-condensed">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Użytkownik</th>
+                  <th>Pakiety</th>
+                  <th>Status</th>
+                  <th>Edytuj</th>  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>
+                    <button class="button fa fa-pencil fa-fw" data-toggle="modal" data-target="#myModal" href=""></button>
+                   <!-- <button class="button fa fa-trash-o fa-lg" href=""></button> -->
+                    <button class="button fa fa-trash-o fa-lg" data-toggle="modal" data-target="#usun" href=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>
+                    <button class="button fa fa-pencil fa-fw" data-toggle="modal" data-target="#myModal" href=""></button>
+                    <button class="button fa fa-trash-o fa-lg" id="usun" href=""></button>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>Aktywny</td>
+                  <td>
+                      <button class="button fa fa-pencil fa-fw" data-toggle="modal" data-target="#myModal" href=""></button>
+                      <button class="button fa fa-trash-o fa-lg" href=""></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button>
+              <h4 class="modal-title" id="myModalLabel">Edytujesz kont{nazwa}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{nazwa}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+              <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button>
+              <h4 class="modal-title" id="myModalLabel">Edytujesz kont{nazwa}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{nazwa}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+              <button type="button" class="btn btn-primary">Zapisz zmiany</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="footer">
+            <div class="container-fluid well well-lg">
+                <p class="text-muted">© Copyright by Paweł Wiśniewski 2016</p>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </body>
+</html>

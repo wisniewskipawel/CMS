@@ -1,0 +1,24 @@
+
+$(document).ready(function(){
+    $('a[href="#pakiet.tpl"]').click(function(){
+        $('table').load('pakiet.html');
+    });
+    $('a[href="#lista.tpl"]').click(function(){
+	$('table').load('lista.html');
+    });
+    $('a[href="#oplaty.tpl"]').click(function(){
+	$('table').load('oplaty.html');
+    });    
+    $('#stworz').click(function(){
+        $('table').load('oplaty.html');
+    });
+    $('a[href="#lists.tpl"]').click(function(){
+       $('table').load('lists.html');
+    });
+    $('a[href="#addarticle.tpl"]').click(function(){
+       $('table').load('addarticle.html');
+    });
+    $('a[href="#poczta.tpl"]').click(function(){
+       $('table').load('poczta.html');
+    });
+});
