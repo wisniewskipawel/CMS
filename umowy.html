@@ -1,3 +1,8 @@
+ <link href='http://fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+       <script src="http//code.jquery.com/jquery-latest.js"></script>
+       <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="js/main.js" type="text/javascript"></script>
         <div class="container well">
             <div class="row-fluid">
@@ -6,7 +11,7 @@
                     <div class="progress-bar progress-bar-success" style="width: 60%"></div>
                 </div>
                 <div class="col-lg-3 center-block">
-                    <a href="#adress">Adress</a>
+                    <a href="#adress"  data-placement="top" data-toggle="tooltip" data-original-title="Poniższy formularz wypełniany jest automatycznie">Adress</a>
                     <form class="hidden">
                         <input type="text" name="adress" placeholder="adress">
                         <input type="text" name="city" placeholder="city">
@@ -19,7 +24,7 @@
                 <div class="col-lg-4 pull-right">
                     <form>
                         <label>Zadaj pytanie</label>
-                        <textarea class="form-control" rows="4"></textarea>
+                        <textarea class="form-control" name="pyt" rows="4"></textarea>
                         <input type="button" class="button" value="Wyślij">
                     </form>
                 </div>
